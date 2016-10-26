@@ -29,8 +29,8 @@ def readadc(adcnum, clockpin, mosipin, misopin, cspin):
         adcout <<= 1
         if i > 0 and GPIO.input(misopin) == GPIO.HIGH:
             adcout |= 0x1
-        GPIO.output(cspin, GPIO.HIGH)
-        return adcout
+    GPIO.output(cspin, GPIO.HIGH)
+    return adcout
 
 GPIO.setmode(GPIO.BCM)
 SPICLK = 11
